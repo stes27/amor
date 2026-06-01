@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-azul-principal: #0041C2;
+  --color-branco: #FFFFFF;
+  --color-dourado: #FFD700;
+
+  /* Map rose colors to azul-principal shades */
+  --color-rose-50: color-mix(in srgb, #0041C2 5%, #FFFFFF);
+  --color-rose-100: color-mix(in srgb, #0041C2 10%, #FFFFFF);
+  --color-rose-200: color-mix(in srgb, #0041C2 20%, #FFFFFF);
+  --color-rose-300: color-mix(in srgb, #0041C2 35%, #FFFFFF);
+  --color-rose-400: color-mix(in srgb, #0041C2 50%, #FFFFFF);
+  --color-rose-500: #0041C2;
+  --color-rose-600: color-mix(in srgb, #0041C2 85%, #000000 15%);
+  --color-rose-700: color-mix(in srgb, #0041C2 80%, #000000 20%);
+  --color-rose-800: color-mix(in srgb, #0041C2 70%, #000000 30%);
+  --color-rose-900: color-mix(in srgb, #0041C2 60%, #000000 40%);
+  --color-rose-950: color-mix(in srgb, #0041C2 40%, #000000 60%);
+
+  /* Map pink colors to dourado (gold) shades */
+  --color-pink-50: color-mix(in srgb, #FFD700 5%, #FFFFFF);
+  --color-pink-100: color-mix(in srgb, #FFD700 10%, #FFFFFF);
+  --color-pink-200: color-mix(in srgb, #FFD700 20%, #FFFFFF);
+  --color-pink-300: color-mix(in srgb, #FFD700 35%, #FFFFFF);
+  --color-pink-400: color-mix(in srgb, #FFD700 50%, #FFFFFF);
+  --color-pink-500: #FFD700;
+  --color-pink-600: color-mix(in srgb, #FFD700 85%, #000000 15%);
+  --color-pink-700: color-mix(in srgb, #FFD700 80%, #000000 20%);
+  --color-pink-800: color-mix(in srgb, #FFD700 70%, #000000 30%);
+  --color-pink-900: color-mix(in srgb, #FFD700 60%, #000000 40%);
+  --color-pink-950: color-mix(in srgb, #FFD700 40%, #000000 60%);
+
+  /* Map red colors to azul-principal or high-contrast gold */
+  --color-red-50: color-mix(in srgb, #0041C2 5%, #FFFFFF);
+  --color-red-100: color-mix(in srgb, #0041C2 10%, #FFFFFF);
+  --color-red-200: color-mix(in srgb, #0041C2 20%, #FFFFFF);
+  --color-red-300: color-mix(in srgb, #0041C2 35%, #FFFFFF);
+  --color-red-400: color-mix(in srgb, #0041C2 50%, #FFFFFF);
+  --color-red-500: #0041C2;
+  --color-red-600: color-mix(in srgb, #0041C2 85%, #000000 15%);
+  --color-red-700: color-mix(in srgb, #0041C2 80%, #000000 20%);
+  --color-red-800: color-mix(in srgb, #0041C2 70%, #000000 30%);
+  --color-red-900: color-mix(in srgb, #0041C2 60%, #000000 40%);
+  --color-red-950: color-mix(in srgb, #0041C2 40%, #000000 60%);
+}
