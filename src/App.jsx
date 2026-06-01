@@ -8,21 +8,6 @@ import Dreams from './Dreams';
 import Navbar from './Navbar';
 
 function App() {
-  const [petals] = useState(() => Array.from({ length: 30 }).map((_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}vw`,
-    animationDuration: `${Math.random() * 5 + 5}s`,
-    animationDelay: `${Math.random() * 5}s`,
-    size: `${Math.random() * 10 + 10}px`,
-    filter: `hue-rotate(${Math.random() * 20 - 10}deg)`
-  })));
-  const [hearts] = useState(() => Array.from({ length: 15 }).map((_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}vw`,
-    animationDuration: `${Math.random() * 10 + 10}s`,
-    animationDelay: `${Math.random() * 5}s`,
-    pulseDuration: `${Math.random() * 2 + 1}s`
-  })));
   const [currentPage, setCurrentPage] = useState('home');
 
   return (
@@ -34,37 +19,6 @@ function App() {
       {currentPage !== 'home' && (
         <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
       )}
-
-      {/* Falling Petals Background */}
-      {petals.map((petal) => (
-        <div
-          key={`petal-${petal.id}`}
-          className="petal"
-          style={{
-            left: petal.left,
-            width: petal.size,
-            height: petal.size,
-            animationDuration: petal.animationDuration,
-            animationDelay: petal.animationDelay,
-            filter: petal.filter
-          }}
-        />
-      ))}
-
-      {/* Floating Hearts Background */}
-      {hearts.map((heart) => (
-        <div
-          key={`heart-${heart.id}`}
-          className="floating-heart"
-          style={{
-            left: heart.left,
-            animationDuration: `${heart.animationDuration}, ${heart.pulseDuration}`,
-            animationDelay: `${heart.animationDelay}, 0s`
-          }}
-        >
-          <Heart className="w-8 h-8 fill-current" />
-        </div>
-      ))}
 
       {/* Main Content — offset top only when navbar is visible */}
       <div className={`${currentPage !== 'home' ? 'pt-[60px]' : ''} w-full flex items-center justify-center`}>
