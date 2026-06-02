@@ -28,8 +28,9 @@ function App() {
             <video
               src={videoSrc}
               autoPlay
-              controls
+              muted
               playsInline
+              preload="auto"
               onEnded={() => setCurrentPage('gallery')}
               className="w-full h-full object-cover"
             />
