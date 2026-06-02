@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import './App.css';
 import Gallery from './Gallery';
 import Letter from './Letter';
 import Reasons from './Reasons';
 import Dreams from './Dreams';
 import Navbar from './Navbar';
+import Welcome from './Welcome';
 
 import videoSrc from './assets/pixverse_mp4_media_web_ori_55e13bf9-e999-48ee-b6fa-5421fcf3280e_seed1260081801.mp4';
+import mobileVideoSrc from './assets/video-mobile.mp4';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+
+  const isMobile = useMemo(() => {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+  }, []);
+
+  const videoSource = isMobile ? mobileVideoSrc : videoSrc;
 
   return (
     <div
@@ -26,15 +34,17 @@ function App() {
         {currentPage === 'home' ? (
           <div className="fixed inset-0 w-screen h-screen z-50 bg-black">
             <video
-              src={videoSrc}
+              src={videoSource}
               autoPlay
               muted
               playsInline
               preload="auto"
-              onEnded={() => setCurrentPage('gallery')}
+              onEnded={() => setCurrentPage('welcome')}
               className="w-full h-full object-cover"
             />
           </div>
+        ) : currentPage === 'welcome' ? (
+          <Welcome onStartJourney={() => setCurrentPage('gallery')} />
         ) : currentPage === 'gallery' ? (
           <Gallery />
         ) : currentPage === 'letter' ? (

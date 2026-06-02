@@ -109,7 +109,7 @@
 
 .beating-heart {
   animation: heartBeat 1.2s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(0, 65, 194, 0.6)); /* blue heart glow */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); /* white heart glow */
 }
 
 @keyframes heartBeat {
@@ -270,6 +270,29 @@
 
 .heart-particle {
   animation: heartFloatUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Falling white hearts on Welcome page */
+@keyframes fallHeart {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+.animate-fall-heart {
+  animation: fallHeart 4s linear forwards;
+  pointer-events: none;
 }
 
 /* Tiny custom rose petal decoration */
