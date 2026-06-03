@@ -295,6 +295,37 @@
   pointer-events: none;
 }
 
+/* Shiny hover effect for light blue button */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  isolation: isolate;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.4), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.btn-shine:hover::before {
+  left: 125%;
+}
+
+.btn-shine:hover {
+  box-shadow: 0 0 25px rgba(125, 211, 252, 0.6);
+  transform: scale(1.05);
+  color: #7dd3fc;
+}
+
 /* Tiny custom rose petal decoration */
 .card-petal-decor {
   border-radius: 12px 0 12px 0;

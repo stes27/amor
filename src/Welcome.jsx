@@ -29,6 +29,7 @@ function Welcome({ onStartJourney }) {
             animationDelay: `${heart.delay}s`,
             fontSize: `${heart.size}px`,
             opacity: 0.7,
+            filter: 'brightness(0) invert(1)',
           }}
         >
           ❤️
@@ -36,12 +37,12 @@ function Welcome({ onStartJourney }) {
       ))}
 
       <h1 className="font-romantic text-5xl md:text-7xl text-white mb-8 drop-shadow-lg z-10">
-        Henrique <span className="beating-heart inline-block">❤️</span> Manuella
+        feliz dias dos namorados meu amor
       </h1>
 
       <button
         onClick={onStartJourney}
-        className="px-10 py-5 bg-white text-pink-600 text-xl font-semibold rounded-full hover:scale-105 transition-transform shadow-lg z-10"
+        className="btn-shine px-10 py-5 bg-white text-sky-300 text-xl font-semibold rounded-full shadow-lg z-10"
       >
         Começar Jornada
       </button>
