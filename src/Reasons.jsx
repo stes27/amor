@@ -49,7 +49,7 @@ const reasonsList = [
   {
     id: 6,
     title: 'Por nossas conversas',
-    description: 'Nossos papos intermináveis sobre tudo e nada, de madrugada ou no almoço, onde o tempo simplesmente parece parar.',
+    description: 'Nossos papos intermináveis sobre tudo e nada, de noite ou no almoço, onde o tempo simplesmente parece parar.',
     icon: MessageCircle,
     color: 'from-teal-50 to-emerald-100 border-teal-200 text-teal-700 shadow-teal-100/30',
     emoji: '💬'
