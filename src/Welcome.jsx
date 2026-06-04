@@ -18,7 +18,7 @@ function Welcome({ onStartJourney }) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center px-4 relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-screen w-full text-center px-4 relative overflow-hidden">
       {/* Falling white hearts */}
       {hearts.map((heart) => (
         <span

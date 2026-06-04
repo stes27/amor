@@ -25,12 +25,12 @@ function App() {
       style={{ backgroundSize: '200% 200%' }}
     >
       {/* ── Persistent Navigation Bar (hidden on home page) ── */}
-      {currentPage !== 'home' && (
+      {currentPage !== 'home' && currentPage !== 'welcome' && (
         <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
       )}
 
       {/* Main Content — offset top only when navbar is visible */}
-      <div className={`${currentPage !== 'home' ? 'pt-[60px]' : ''} w-full flex items-center justify-center`}>
+      <div className={`${currentPage !== 'home' && currentPage !== 'welcome' ? 'pt-[60px]' : ''} w-full flex items-center justify-center`}>
         {currentPage === 'home' ? (
           <div className="fixed inset-0 w-screen h-screen z-50 bg-black">
             <video
