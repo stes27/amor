@@ -23,7 +23,7 @@ export default function Navbar({ currentPage, onNavigate }) {
         {/* Logo / Brand */}
         <div className="navbar-brand">
           <Heart className="navbar-brand-icon" />
-          <span className="navbar-brand-text">Para Sempre</span>
+          <span className="navbar-brand-text">Para meu amor</span>
         </div>
 
         {/* Desktop links */}
@@ -59,8 +59,6 @@ export default function Navbar({ currentPage, onNavigate }) {
       {/* Mobile Drawer */}
       <div className={`navbar-drawer ${open ? 'navbar-drawer-open' : ''}`}>
         <div className="navbar-drawer-header">
-          <Heart className="navbar-brand-icon" />
-          <span className="navbar-brand-text">Para Sempre</span>
           <button className="navbar-drawer-close" onClick={() => setOpen(false)}>
             <X size={24} />
           </button>
