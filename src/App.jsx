@@ -6,6 +6,8 @@ import Reasons from './Reasons';
 import Dreams from './Dreams';
 import Navbar from './Navbar';
 import Welcome from './Welcome';
+import Riddle from './Riddle';
+import Celebration from './Celebration';
 
 import videoSrc from './assets/pixverse_mp4_media_web_ori_55e13bf9-e999-48ee-b6fa-5421fcf3280e_seed1260081801.mp4';
 import mobileVideoSrc from './assets/video-mobile.mp4';
@@ -51,6 +53,10 @@ function App() {
           <Letter />
         ) : currentPage === 'reasons' ? (
           <Reasons />
+        ) : currentPage === 'riddle' ? (
+          <Riddle onNavigate={setCurrentPage} />
+        ) : currentPage === 'celebration' ? (
+          <Celebration onNavigate={setCurrentPage} />
         ) : (
           <Dreams />
         )}

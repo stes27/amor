@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Heart, Menu, X, Images, Mail, Star, Sparkles } from 'lucide-react';
+import EasterEggHeart from './EasterEggHeart';
 
 const pages = [
   { id: 'gallery', label: 'Nossa Jornada', icon: Images },
@@ -10,6 +11,7 @@ const pages = [
 
 export default function Navbar({ currentPage, onNavigate }) {
   const [open, setOpen] = useState(false);
+  const showEasterEgg = currentPage !== 'riddle' && currentPage !== 'celebration';
 
   const handleNav = (id) => {
     onNavigate(id);
@@ -21,10 +23,17 @@ export default function Navbar({ currentPage, onNavigate }) {
       {/* Top Bar */}
       <nav className="navbar-bar">
         {/* Logo / Brand */}
-        <div className="navbar-brand">
-          <Heart className="navbar-brand-icon" />
-          <span className="navbar-brand-text">Para meu amor</span>
-        </div>
+        {showEasterEgg ? (
+          <EasterEggHeart onNavigate={onNavigate}>
+            <Heart className="navbar-brand-icon" />
+            <span className="navbar-brand-text">Para meu amor</span>
+          </EasterEggHeart>
+        ) : (
+          <div className="navbar-brand">
+            <Heart className="navbar-brand-icon" />
+            <span className="navbar-brand-text">Para meu amor</span>
+          </div>
+        )}
 
         {/* Desktop links */}
         <ul className="navbar-desktop-links">
